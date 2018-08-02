@@ -2,7 +2,7 @@ generate_data = function(n,p) {
   return(list(covariates = matrix(rnorm(n=n*p), nrow=n, ncol=p), responses = as.vector(rnorm(n))))
 }
 
-model_select = function(cocariates, responses, cutoff) {
+model_select = function(covariates, responses, cutoff) {
   regression.lm = lm(responses ~ covariates)
   p_values = coef(summary(regression.lm))[-1,4]
   
